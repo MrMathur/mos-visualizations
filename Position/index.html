@@ -1,0 +1,54 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Position</title>
+
+  <!-- Load d3.js -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://unpkg.com/d3-simple-slider"></script>
+  <script src="./main.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,500;1,200&display=swap"
+    rel="stylesheet">
+
+</head>
+<!-- Create a div where the graph will take place -->
+
+<body onload="d3onload()">
+  <h1>Position and Gaze Diagram</h1>
+  <div class="row align-items-center">
+    <div class="col-sm-2">
+      <p style="display: inline;">Time:</p>
+      <p id="value-step" style="display: inline;"></p>
+    </div>
+    <div class="col-sm">
+      <div id="slider-step"></div>
+    </div>
+    <input type="checkbox" id="teacher" name="teacher" value="teacher" checked>
+    <label for="vehicle1"> Teacher</label><br>
+    <input type="checkbox" id="student1" name="student1" value="student1" checked>
+    <label for="vehicle2"> Student 1</label><br>
+    <input type="checkbox" id="student2" name="student2" value="student2" checked>
+    <label for="vehicle2"> Student 2</label><br>
+    <input type="checkbox" id="student3" name="student3" value="student3" checked>
+    <label for="vehicle2"> Student 3</label><br>
+    <input type="checkbox" id="student4" name="student4" value="student4" checked>
+    <label for="vehicle2"> Student 4</label><br>
+    <input type="checkbox" id="student5" name="student1" value="student5" checked>
+    <label for="vehicle2"> Student 5</label><br>
+    <input type="checkbox" id="student6" name="student2" value="student6" checked>
+    <label for="vehicle2"> Student 6</label><br>
+    <input type="checkbox" id="student7" name="student3" value="student7" checked>
+    <label for="vehicle2"> Student 7</label><br>
+    <input type="checkbox" id="student8" name="student4" value="student8" checked>
+    <label for="vehicle2"> Student 8</label><br>
+    <input type="checkbox" id="student9" name="student3" value="student9" checked>
+    <label for="vehicle2"> Student 9</label><br>
+    <input type="checkbox" id="student10" name="student4" value="student10" checked>
+    <label for="vehicle2"> Student 10</label><br>
+  </div>
+  <div id="my_dataviz" style="position: absolute; top: 0; right: 0;"></div>
+</body>

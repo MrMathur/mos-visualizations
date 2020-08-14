@@ -1,0 +1,19 @@
+h1 {
+  text-align: center;
+  font-family: 'Bai Jamjuree';
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+p {
+  font-family: 'Bai Jamjuree';
+
+  margin: 40px;
+}
+
+.desc {
+  margin-top: 50px;
+}
