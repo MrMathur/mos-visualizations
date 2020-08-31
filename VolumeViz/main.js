@@ -52,7 +52,8 @@ loadD3 = () => {
         .attr('stroke-width', 3)
         .attr('opacity', 0.3)
         .on('click', () => {
-          let y_below = d3.event.y - 105 + 20;
+          console.log(d3.event.y);
+          let y_below = d3.event.y - 240 + 20;
           svg.select('#lower-tab')
             .attr('y', y_below);
 
@@ -175,7 +176,7 @@ update = (y_below) => {
 
   let y_dash = convert(y_below);
 
-  console.log(y_below, y_dash);
+  // console.log(y_below, y_dash);
 
   let y = d3.scaleLinear()
     .domain([y_dash, 100])

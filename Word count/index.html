@@ -13,10 +13,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,500;1,200&display=swap"
     rel="stylesheet">
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <!-- Create a div where the graph will take place -->
 
 <body onload="d3onload()">
-  <h1>Word Count Lollipop Chart</h1>
-  <div id="my_dataviz"></div>
+  <div class="container">
+    <div class="row">
+      <h1 class="col-lg-12">Word Count Lollipop Chart</h1>
+    </div>
+    <div class="row">
+      <h2>Visualization</h2>
+      <div id="my_dataviz"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <h2>Techniques</h2>
+        <p>The first visualization is what is known as a lollipop chart, which is an extension of the more widely known
+          bar chart. In this case, the length of each horizontal line across the X-axis encodes the number of times a
+          word has been spoken during the 2-minute video of classroom interaction. Moreover, the chart supports standard
+          forms of user interaction in two ways: Sorting and hovering (see Yi et al., 2007). Namely, the words can be
+          sorted in ascending or descending order by using a button while hovering over each circle also reveals the
+          sentences in which the word was spoken and allows users to view and read these sentences.
+
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Encoding Decisions</h2>
+        <p>A database (i.e., a .csv file) was generated with each word, its frequency, and the sentences during which
+          these words were spoken. Conversation spoken by teachers and students during this sequence of interaction was
+          occasionally in spanish. The authors decided to only use the english translation of words in the video.
+          Notably, articles and pronouns were also not included. With the database in place, a lollipop chart was made,
+          by encoding the x position of the circle as the word length, and the y-axis as the rank (either ascending or
+          descending, on the basis of the user’s selection). A lollipop chart was used as opposed to a more standard bar
+          chart because a lollipop chart affords more ways for users to interact with the data, in this case by reading
+          sentences from which each word was derived.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Insights Generated</h2>
+        <p>Many basic insights are visible through this simple, standard representation. For example, while the central
+          topic of this sequence of classroom interaction is the notion that “matter occupies space”, those particular
+          words are rarely spoken by the teacher or students. In contrast, metaphors such as CocaCola, Sand, Bubbles,
+          and Dancing are repeatedly uttered. A few student names are also recurrent, however not all student names are
+          spoken. Furthermore, the possibilities to interact with this visualization allow users to consider the context
+          in which each utterance is spoken at a sentence level offering very different ways to read turns of talk in
+          comparison to traditional, non-interactive transcription methods. These possibilities are in accordance with
+          Schneiderman’s visualization mantra stating a visualization should first provide an overview description, and
+          subsequently, provide “details on demand” through user interaction such as hovering or filtering (Shneiderman,
+          1996). However, many insights are also lost through this type of representation in comparison to a more
+          traditional transcript. For example, coherence of participants’ sense-making is difficult to recover even
+          through interaction.</p>
+      </div>
+    </div>
+  </div>
 </body>

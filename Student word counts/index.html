@@ -11,13 +11,63 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,500;1,200&display=swap"
     rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
 </head>
 
 <body onload="loadD3()">
-  <h1>Word Count Unit Visualization</h1>
+  <div class="container">
+    <div class="row" style="margin-top: 50px">
+      <h1 class="col-lg-12">Word Count Unit Visualization</h1>
+    </div>
+    <div class="row" style="margin-top: 100px">
+      <h2>Visualization</h2>
+    </div>
+  </div>
   <svg id="main">
 
   </svg>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h2>Techniques</h2>
+        <p>The third visualization is what is known as a unit visualization. It is named so because every character from
+          the video is represented by a spherical unit. Different attributes of this unit encode different
+          characteristics. Here, the area covered by the outer and inner circles represent the number of total words and
+          also questions uttered by each student and the teacher during this sequence of interaction.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Encoding Decisions</h2>
+        <p>A database was generated with each individual, the word count for each individual, and the question word
+          count for each individual. Notably, expressions and exclamations were not included in word counts for each
+          individual. A distinction between a statement and question was made by judging the intonation of the dialogue,
+          with the intent being to explore the role and significance of questioning in the classroom. With the database
+          in place, a unit visualization was created. The area of the lighter circle indicates the total word count for
+          each individual whereas the area of each darker circle indicates the question word count for each individual
+          (as represented by the legend). Importantly, area (as opposed to the use of radius) was selected to encode
+          total and question word counts because the consensus in the visualization community is to use area, as it is a
+          more intuitive indicator of quantity. The x position of each individual is determined by one of three modes or
+          orders selected by the user.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Insights Generated</h2>
+        <p> The visualization supports comparative analysis across individual speakers with respect to the number of
+          words uttered and the number of questions posed. For example, the teacher speaks many more words and also a
+          far larger number of questions whereas students have much lower word counts and fewer questions. The
+          visualization makes evident differences in contributions between students. For example, the visualization
+          highlights child 1 as a significant speaker in the classroom; Notably, she also asks the teacher the largest
+          number of questions. Altogether, the visualization is quite useful to analyze conversational parity or whether
+          there are equitable opportunities to talk. However, the coherence and meaning of conversation are
+          backgrounded.
+        </p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

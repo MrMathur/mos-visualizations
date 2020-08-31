@@ -14,41 +14,90 @@
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,500;1,200&display=swap"
     rel="stylesheet">
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <!-- Create a div where the graph will take place -->
 
 <body onload="d3onload()">
-  <h1>Position and Gaze Diagram</h1>
-  <div class="row align-items-center">
-    <div class="col-sm-2">
-      <p style="display: inline;">Time:</p>
-      <p id="value-step" style="display: inline;"></p>
+  <div class="container">
+    <div class="row" style="margin-top: 50px;">
+      <h1 class="col-lg-12">Position and Gaze Diagram</h1>
     </div>
-    <div class="col-sm">
-      <div id="slider-step"></div>
+    <div style="position: relative; margin-top: 300px; margin-bottom: 100px;">
+      <h2>Visualization</h2>
+      <div>
+        <div class="col-sm-2">
+          <p style="display: inline;">Time:</p>
+          <p id="value-step" style="display: inline;"></p>
+        </div>
+        <div class="col-sm">
+          <div id="slider-step"></div>
+        </div>
+        <br />
+        <input type="checkbox" id="teacher" name="teacher" value="teacher" checked>
+        <label for="vehicle1"> Teacher</label><br>
+        <input type="checkbox" id="student1" name="student1" value="student1" checked>
+        <label for="vehicle2"> Student 1</label><br>
+        <input type="checkbox" id="student2" name="student2" value="student2" checked>
+        <label for="vehicle2"> Student 2</label><br>
+        <input type="checkbox" id="student3" name="student3" value="student3" checked>
+        <label for="vehicle2"> Student 3</label><br>
+        <input type="checkbox" id="student4" name="student4" value="student4" checked>
+        <label for="vehicle2"> Student 4</label><br>
+        <input type="checkbox" id="student5" name="student1" value="student5" checked>
+        <label for="vehicle2"> Student 5</label><br>
+        <input type="checkbox" id="student6" name="student2" value="student6" checked>
+        <label for="vehicle2"> Student 6</label><br>
+        <input type="checkbox" id="student7" name="student3" value="student7" checked>
+        <label for="vehicle2"> Student 7</label><br>
+        <input type="checkbox" id="student8" name="student4" value="student8" checked>
+        <label for="vehicle2"> Student 8</label><br>
+        <input type="checkbox" id="student9" name="student3" value="student9" checked>
+        <label for="vehicle2"> Student 9</label><br>
+        <input type="checkbox" id="student10" name="student4" value="student10" checked>
+        <label for="vehicle2"> Student 10</label><br>
+      </div>
+      <div id="my_dataviz" style="position: absolute; bottom: 0; right: 0;"></div>
     </div>
-    <input type="checkbox" id="teacher" name="teacher" value="teacher" checked>
-    <label for="vehicle1"> Teacher</label><br>
-    <input type="checkbox" id="student1" name="student1" value="student1" checked>
-    <label for="vehicle2"> Student 1</label><br>
-    <input type="checkbox" id="student2" name="student2" value="student2" checked>
-    <label for="vehicle2"> Student 2</label><br>
-    <input type="checkbox" id="student3" name="student3" value="student3" checked>
-    <label for="vehicle2"> Student 3</label><br>
-    <input type="checkbox" id="student4" name="student4" value="student4" checked>
-    <label for="vehicle2"> Student 4</label><br>
-    <input type="checkbox" id="student5" name="student1" value="student5" checked>
-    <label for="vehicle2"> Student 5</label><br>
-    <input type="checkbox" id="student6" name="student2" value="student6" checked>
-    <label for="vehicle2"> Student 6</label><br>
-    <input type="checkbox" id="student7" name="student3" value="student7" checked>
-    <label for="vehicle2"> Student 7</label><br>
-    <input type="checkbox" id="student8" name="student4" value="student8" checked>
-    <label for="vehicle2"> Student 8</label><br>
-    <input type="checkbox" id="student9" name="student3" value="student9" checked>
-    <label for="vehicle2"> Student 9</label><br>
-    <input type="checkbox" id="student10" name="student4" value="student10" checked>
-    <label for="vehicle2"> Student 10</label><br>
-  </div>
-  <div id="my_dataviz" style="position: absolute; top: 0; right: 0;"></div>
+    <div class="row">
+      <div class="col-lg-4">
+        <h2>Techniques</h2>
+        <p>The chart is a position and gaze diagram, where each dot is positioned according to a character's pixel
+          values in the video, and the line represents the gaze of the character, at any instant of time. The users can
+          use the provided time slider to observe the positions and gaze at specific intervals of time while filtering
+          capabilities via checkboxes allow users to selectively view each individual’s position and gize and also
+          simplify the visualization.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Encoding Decisions</h2>
+        <p>To deal with the complexity and size of data, 5 second intervals were chosen. Moreover, pixel values from the
+          video were used to indicate the position of the character, as opposed to a bird’s eye view of the room.
+          Likewise, the gaze in the video is in 3D space. However, the gaze was mapped in 2D space, because of the two
+          dimensional nature of a video. The gaze was defined as the line between every student (and teacher ), and the
+          point at which the field of view intersected with the screen’s boundary. A database was generated with 5
+          second intervals, the pixel values for each character’s head position, and the pixel values for the point at
+          which their gaze intersects with the boundary of the screen. Circles were plotted at the pixel values of the
+          head, and a line was generated from the head to the gaze point. Each character was color coded to identify the
+          circle. Since there are 11 categories, a standard rule in information visualization called the Magic Number 7
+          rule dictates that color is not an appropriate encoding for this visualization. However, the interactive
+          filtering technique permits us to break this rule, with the hope that users would not compare more than 9
+          values at once through the visualization.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Insights Generated</h2>
+        <p>The visualization indicates aspects of how the teacher, individual students, and the class collectively focus
+          and manage their attention or, in other words, how gaze is recruited and allocated. Notably, it highlights the
+          ebbs and floors of how gaze is collected and released during this sequence of interaction. For example, around
+          the 5s mark, it becomes clear that all the students begin looking at the center of the classroom or
+          experiment, as opposed to many different directions observed earlier. Most students look at the teacher,
+          whereas the teacher’s gaze fluctuates between students. Those sitting away from the teacher seem to focus
+          their gaze on the teacher, whereas those sitting next to her seem to look at other students. This pattern
+          repeats across the two minute sequence of interaction in response to how the teacher gathers and releases
+          attention through her gesture and talk.
+        </p>
+      </div>
+    </div>
 </body>

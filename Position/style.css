@@ -114,3 +114,7 @@ input[type='checkbox']:checked:after {
 label {
   margin-left: 30px;
 }
+
+h2 {
+  font-family: 'Bai Jamjuree';
+}

@@ -11,13 +11,64 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,500;1,200&display=swap"
     rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body onload="loadD3()">
-  <h1>Dialogue Bubble Chart</h1>
+  <div class="container">
+    <div class="row" style="margin-top: 50px;">
+      <h1 class="col-lg-12">Dialogue Bubble Chart</h1>
+    </div>
+    <div class="row" style="margin-top: 100px;">
+      <h2>Visualization</h2>
+    </div>
+  </div>
   <svg id="main">
 
   </svg>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h2>Techniques</h2>
+        <p> The second visualization is a bubble chart, where each ellipse represents a conversation turn (i.e., in this
+          case, uninterrupted speech that could span multiple sentences) spoken by either the teacher or a student.
+          Ellipses are organized across a conventional timeline or time series display and the beginning and end (or
+          left and right) of each ellipse marks the beginning and end of each conversation turn. Moreover, the
+          visualization supports user interaction by allowing users to toggle between rectangles and ellipses to
+          represent conversation turns, which allow users to explore subtly different aspects of conversation structure
+          from this sequence of interaction. The users can also hover on a conversation turn (ellipse or rectangle), to
+          display and read the dialogue spoken.</p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Encoding Decisions</h2>
+        <p> A database was generated with each conversation turn, its content, and who spoke each conversation turn.
+          Notably, each conversation turn was defined as a sequence of uninterrupted speech, which could span over
+          multiple sentences. With the database in place, a bubble chart was made. The height of the ellipse indicates
+          the number of words in each conversation turn. Thus, taller ellipses or rectangles (depending on the view
+          selected by the user) indicate more words spoken during a conversation turn or a faster conversation turn. The
+          left and right of each ellipse or rectangle indicate the beginning and end of each conversation turn. Thus,
+          where ellipses or rectangles overlap indicates overlapping speech. The color of the bubbles represents who
+          made each conversation turn. Hovering on a bubble reveals the content of the dialogue.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Insights Generated</h2>
+        <p>The bubble chart reveals a number of relevant insights. First, one can observe the general pacing of each
+          conversation turn (i.e., length of conversation turns with respect to both the number of words and amount of
+          time). This makes visible how the teacher speaks for much longer stretches of time and the parts of this
+          interaction where students speak for long periods of time, often while asking a question. Likewise, the
+          moments during this interaction when no one is speaking can be quickly identified. Moreover, overlapping
+          ellipses (or rectangles depending on the view selected) are an interesting phenomenon. For example, these
+          overlaps show that while students speak over one another they do not speak over or interrupt the teacher’s
+          speech. Furthermore, the teacher utters many more words per conversation turn in comparison to students, who
+          generally speak fewer words and for shorter periods of time. Finally, the ability to quickly hover over each
+          ellipse or rectangle and read conversation provides a fundamentally different way to compare and contrast
+          conversation turns in comparison to existing transcription methods.
+        </p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

@@ -15,7 +15,7 @@ loadD3 = () => {
         .range([0, 60]);
       svg = d3.select('#main')
         .attr('width', '100vw')
-        .attr('height', '100vh');
+        .attr('height', '60vh');
 
       svg.selectAll('.statement')
         .data(dataset, d => d.Person)

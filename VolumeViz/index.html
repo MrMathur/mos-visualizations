@@ -11,13 +11,57 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,500;1,200&display=swap"
     rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body onload="loadD3()">
-  <h1>Volume Scatter Plot</h1>
-  <svg id="main">
+  <div class="container">
+    <div class="row" style="margin-top: 50px;">
+      <h1 class="col-lg-12">Volume Scatter Plot</h1>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+      <h2 style="margin-bottom: 25px;">Visualization</h2>
+      <svg id="main">
 
-  </svg>
+      </svg>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <h2>Techniques</h2>
+        <p>The chart is a scatter plot, where each dot represents a 0.2s instant in the video. The x position of the dot
+          encodes the timestamp of the instant, the y position encodes the volume of the video at that instant, and the
+          color represents the volume contributor, which is indicative of the source of the volume at that instant of
+          the video. The user can interact with the visualization by rescaling the y-axis through a vertical slider,
+          which allows them to zoom into relevant parts of the graph.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Encoding Decisions</h2>
+        <p>Using a free, mobile application, a database was generated that encoded the volume organized by contributors
+          from the sequence of interaction at time intervals of 0.2s. Volume contributors (i.e., Student, Teacher and
+          Ambient Noise) at every time stamp were manually encoded by the authors. Key decisions were made about how to
+          allocate volume to individuals. For example, at times multiple individuals spoke, and in this encoding scheme,
+          the individual with the longest conversation turn was chosen. Moreover, ambient noise reflects a general
+          category that groups other types of noises during this sequence of interaction not related to speakers. From
+          this data, a scatterplot was generated which had time encoded on the x-axis, volume on the y-axis, and the
+          contributor as color.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h2>Insights Generated</h2>
+        <p>The scatterplot makes particular phenomena visible that are quite different than other visualizations
+          reviewed thus far. For instance, stretches of ambient sound (when no one is speaking) correlate to when the
+          teacher is conducting the demonstration that grounds the sequence of interaction. Moreover, the variety of
+          intonations of different speakers are visible in ways quite different from how intonation is typically
+          represented by textual conventions of current transcription methods. Furthermore, average volumes can be
+          viewed and compared, for example, to understand how loudness or strength of projection by a speaker influences
+          classroom interaction, for example, by encouraging or dissuading others to speak.
+        </p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

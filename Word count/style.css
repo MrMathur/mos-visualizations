@@ -11,3 +11,8 @@ h1 {
 .mycircle:hover {
   opacity: 1;
 }
+
+p,
+h2 {
+  font-family: 'Bai Jamjuree';
+}

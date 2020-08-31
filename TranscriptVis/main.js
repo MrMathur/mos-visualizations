@@ -6,7 +6,7 @@ loadD3 = () => {
     .then(() => {
 
       let width = 1400,
-        height = 600;
+        height = 300;
 
       svg = d3.select('#main')
         .attr('width', width)
@@ -75,7 +75,7 @@ loadD3 = () => {
           svg.append('text')
             .attr('id', 'desc')
             .text(d.content)
-            .attr('transform', `translate(${width/2}, ${y(85)})`)
+            .attr('transform', `translate(${width/2}, ${height-25})`)
             .attr('text-anchor', 'middle')
             .attr('font-family', 'Bai Jamjuree');
         })
@@ -107,7 +107,7 @@ loadD3 = () => {
           svg.append('text')
             .attr('id', 'desc')
             .text(d.content)
-            .attr('transform', `translate(${width/2}, ${y(85)})`)
+            .attr('transform', `translate(${width/2}, ${height-25})`)
             .attr('font-family', 'Bai Jamjuree')
             .attr('text-anchor', 'middle');
 
