@@ -66,24 +66,34 @@ d3onload = () => {
 
     console.log(dataset);
 
-    var slider = d3
-      .sliderHorizontal()
-      .min(0)
-      .max(10)
-      .step(1)
+    // Step
+    var sliderStep = d3
+      .sliderBottom()
+      .min(d3.min(data))
+      .max(d3.max(data))
       .width(300)
-      .displayValue(false)
-      .on('onchange', (val) => {
-        d3.select('#value').text(val);
+      // .tickFormat(d3.format('.2%'))
+      .ticks(10)
+      .step(5)
+      .default(0)
+      .on('onchange', val => {
+        d3.select('p#value-step').text((val));
+
+        value = sliderStep.value();
+        updatePeopleToShow();
       });
 
-    d3.select('#slider')
+    var gStep = d3
+      .select('div#slider-step')
       .append('svg')
       .attr('width', 500)
       .attr('height', 100)
       .append('g')
-      .attr('transform', 'translate(30,30)')
-      .call(slider);
+      .attr('transform', 'translate(30,30)');
+
+    gStep.call(sliderStep);
+
+    d3.select('p#value-step').text((sliderStep.value()));
   });
 }
 
