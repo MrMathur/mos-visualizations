@@ -51,8 +51,8 @@ d3onload = () => {
       .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
-    // var data = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120];
-    var data = [0, 5, 10, 15, 20, 25, 30];
+    var data = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120];
+    // var data = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60];
 
     let init_data;
 
@@ -66,31 +66,24 @@ d3onload = () => {
 
     console.log(dataset);
 
-    var sliderStep = d3
-      .sliderBottom()
-      .min(d3.min(data))
-      .max(d3.max(data))
+    var slider = d3
+      .sliderHorizontal()
+      .min(0)
+      .max(10)
+      .step(1)
       .width(300)
-      // .tickFormat(d3.format('.2%'))
-      .ticks(5)
-      .step(5)
-      .default(0)
-      .on('onchange', val => {
-        value = val;
-        draw(val, dataset);
+      .displayValue(false)
+      .on('onchange', (val) => {
+        d3.select('#value').text(val);
       });
 
-    var gStep = d3
-      .select('div#slider-step')
+    d3.select('#slider')
       .append('svg')
       .attr('width', 500)
       .attr('height', 100)
       .append('g')
-      .attr('transform', 'translate(30,30)');
-
-    gStep.call(sliderStep);
-
-    d3.select('p#value-step').text((sliderStep.value()));
+      .attr('transform', 'translate(30,30)')
+      .call(slider);
   });
 }
 

@@ -7,7 +7,7 @@
   <title>Position</title>
 
   <!-- Load d3.js -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3.v5.js"></script>
   <script src="https://unpkg.com/d3-simple-slider"></script>
   <script src="./main.js"></script>
   <link rel="stylesheet" href="style.css">
@@ -25,14 +25,14 @@
       <h1 class="col-lg-12">Position and Gaze Diagram</h1>
     </div>
     <div style="position: relative; margin-top: 300px; margin-bottom: 100px;">
-      <h2>Visualization</h2>
+      <!-- <h2>Visualization</h2> -->
       <div>
         <div class="col-sm-2">
           <p style="display: inline;">Time:</p>
-          <p id="value-step" style="display: inline;"></p>
+          <p id="value" style="display: inline;"></p>
         </div>
         <div class="col-sm">
-          <div id="slider-step"></div>
+          <div id="slider"></div>
         </div>
         <br />
         <input type="checkbox" id="teacher" name="teacher" value="teacher" checked>
