@@ -1,4 +1,4 @@
-# classroom-viz
+# One Qualitative Data Set Visualized Five Ways
 
 Hi! This is a repository that illustrates new techniques to visualize classroom interaction. Specifically, this repository demonstrates different ways to visualize one unstructured and qualitative data set, a 2-minute video of classroom interaction showing the teaching of a key idea in the physics of matter—that matter occupies space—in a kindergarten-first grade classroom. 
 
