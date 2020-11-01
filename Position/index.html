@@ -8,7 +8,6 @@
 
   <!-- Load d3.js -->
   <script src="https://d3js.org/d3.v5.js"></script>
-  <script src="https://unpkg.com/d3-simple-slider"></script>
   <script src="./main.js"></script>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,500;1,200&display=swap"
@@ -27,12 +26,15 @@
     <div style="position: relative; margin-top: 300px; margin-bottom: 100px;">
       <!-- <h2>Visualization</h2> -->
       <div>
-        <div class="col-sm-2">
-          <p style="display: inline;">Time:</p>
-          <p id="value-step" style="display: inline;"></p>
-        </div>
-        <div class="col-sm">
+        <!-- <div class="col-sm">
           <div id="slider-step"></div>
+        </div> -->
+        <div class="slidecontainer">
+          <div class="col-sm-2">
+            <p>Time: <span id="value-step" ></span>s</p>
+          </div>
+          <input type="range" min="0" max="120" value="0" step="5" class="slider" onchange="draw(this.value)"
+            id="myRange">
         </div>
         <br />
         <input type="checkbox" id="teacher" name="teacher" value="teacher" checked>

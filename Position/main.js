@@ -10,91 +10,90 @@ d3onload = () => {
 
   peopleToShow = ["teacher", "student1", "student2", "student3", "student4", "student5", "student6", "student7", "student8", "student9", "student10"];
   // Parse the Data
-  d3.csv("./data.csv").then(data => {
-    dataset = d3.nest()
-      .key(d => d.time)
-      .entries(data);
+  d3.csv("./data.csv")
+    .then(data => {
+      dataset = d3.nest()
+        .key(d => d.time)
+        .entries(data);
+    }).then(() => {
+      // set the dimensions and margins of the graph
+      var margin = {
+          top: 10,
+          right: 30,
+          bottom: 40,
+          left: 100
+        },
+        width = 1000 - margin.left - margin.right,
+        height = 700 - margin.top - margin.bottom;
 
-    console.log(dataset);
-  }).then(() => {
-    // set the dimensions and margins of the graph
-    var margin = {
-        top: 10,
-        right: 30,
-        bottom: 40,
-        left: 100
-      },
-      width = 1000 - margin.left - margin.right,
-      height = 700 - margin.top - margin.bottom;
+      accent = d3.scaleOrdinal().domain(peopleToShow).range(colors);
 
-    accent = d3.scaleOrdinal().domain(peopleToShow).range(colors);
-
-    for (let people of peopleToShow) {
-      d3.select('body').select(`#${people}`)
-        .style('background', accent(people));
-    }
-
-    xScale = d3.scaleLinear()
-      .domain([0, 1440])
-      .range([0, width]);
-
-    yScale = d3.scaleLinear()
-      .domain([0, 900])
-      .range([0, height]);
-
-    // append the svg object to the body of the page
-    svg = d3.select("#my_dataviz")
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
-
-    var data = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120];
-    // var data = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60];
-
-    let init_data;
-
-    for (let datum of dataset) {
-      if (datum.key == 0) {
-        init_data = datum.values;
+      for (let people of peopleToShow) {
+        d3.select('body').select(`#${people}`)
+          .style('background', accent(people));
       }
-    }
 
-    drawingCircles(init_data);
+      xScale = d3.scaleLinear()
+        .domain([0, 1440])
+        .range([0, width]);
 
-    console.log(dataset);
+      yScale = d3.scaleLinear()
+        .domain([0, 900])
+        .range([0, height]);
 
-    // Step
-    var sliderStep = d3
-      .sliderBottom()
-      .min(d3.min(data))
-      .max(d3.max(data))
-      .width(300)
-      // .tickFormat(d3.format('.2%'))
-      .ticks(10)
-      .step(5)
-      .default(0)
-      .on('onchange', val => {
-        d3.select('p#value-step').text((val));
+      // append the svg object to the body of the page
+      svg = d3.select("#my_dataviz")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
 
-        value = sliderStep.value();
-        updatePeopleToShow();
-      });
+      var data = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120];
 
-    var gStep = d3
-      .select('div#slider-step')
-      .append('svg')
-      .attr('width', 500)
-      .attr('height', 100)
-      .append('g')
-      .attr('transform', 'translate(30,30)');
+      let init_data;
 
-    gStep.call(sliderStep);
+      for (let datum of dataset) {
+        if (datum.key == 0) {
+          init_data = datum.values;
+        }
+      }
 
-    d3.select('p#value-step').text((sliderStep.value()));
-  });
+      drawingCircles(init_data);
+
+
+      d3.select('span#value-step').text((value));
+
+      // // Step
+      // var sliderStep = d3
+      //   .sliderBottom()
+      //   .min(d3.min(data))
+      //   .max(d3.max(data))
+      //   .width(300)
+      //   // .tickFormat(d3.format('.2%'))
+      //   .ticks(10)
+      //   .step(5)
+      //   .default(0)
+      //   .on('onchange', val => {
+      //     d3.select('p#value-step').text((val));
+
+      //     value = sliderStep.value();
+      //     updatePeopleToShow();
+      //   });
+
+      // var gStep = d3
+      //   .select('div#slider-step')
+      //   .append('svg')
+      //   .attr('width', 500)
+      //   .attr('height', 100)
+      //   .append('g')
+      //   .attr('transform', 'translate(30,30)');
+
+      // gStep.call(sliderStep);
+
+      // d3.select('p#value-step').text((sliderStep.value()));
+    });
 }
 
 drawingCircles = data => {
@@ -191,12 +190,11 @@ drawingCircles = data => {
     .data(data, d => d.name)
     .exit()
     .remove();
-
-
 }
 
-draw = (val, dataset) => {
-  d3.select('p#value-step').text((val));
+draw = (val) => {
+  value = val;
+  d3.select('span#value-step').text((val));
   for (let datum of dataset) {
     if (datum.key == val) {
       dataToShow = datum.values;
@@ -214,5 +212,5 @@ updatePeopleToShow = () => {
       peopleToShow.push(box.value);
     }
   }
-  draw(value, dataset);
+  draw(value);
 }
