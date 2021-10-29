@@ -1,0 +1,36 @@
+name,length,content,timestamp,timestamp1,timestamp2,midpoint,width
+teacher,5,"Here we go, you ready?",1,1,2,1.5,1
+student3,1,Yes,2,2,3,2.5,1
+student2,1,Yup,2,2,3,2.5,1
+teacher,7,"Okay here we go, here we go.",3,2,4,3,2
+student5,12,It's getting higher. It's gotten higher. It's getting higher. And it's high,13,9,16,12.5,7
+teacher,32,"Look at how much. Hold on. We gonna let it. Cuz right now the sand is going like this. It�s dancing, too. But you know what it�s dancing to? What do you think?",21,16,26,21,10
+student15,1,Rocks,27,27,28,27.5,1
+student15,1,Jiggly,28,28,29,28.5,1
+teacher,6,"Jiggle [whisper].	It’s doing the popcorn. Hahaha [laughs].",31,29,33,31,4
+student1,1,Popcorn,32,32,33,32.5,1
+teacher,31,"	Oh,	WAIT,	WAIT,	WAIT! Look	at	Liam’s	finger.		Now	look	at	the	jar	and	tell	me	where	
+the	sand	is	at.	Move	back	a	little	bit, so	other	people	can	see.",43,33,43,38,10
+student1,4,Cuz I wanna see,42,42,43,42.5,1
+student1,7,It's going to turn into hot cocoa,43,42,44,43,2
+teacher,16,"Okay,	Alexis	is	touching.	Put	your	finger	there,	Alexis.	Okay.	Now	look.	The	sand	did	what?",48,44,52,48,8
+student1,2,Went Down,53,53,54,53.5,1
+teacher,7,"	It	sank.	The	water	did	what,	Liam?	",57,55,57,56,2
+student1,1,Rise,59,58,59,58.5,1
+teacher,9,"	It- it	rised.	And	the	rocks	stayed	at	the",62,59,63,61,4
+student1,1,Bottom,64,64,65,64.5,1
+teacher,8,"So	we	know, then, that	matter	occupies	space.",68,66,70,68,4
+student1,6," I’m	so tired	of doing this.",72,70,73,71.5,3
+teacher,4,"Okay,	you	can	stop",74,72,73,72.5,1
+student1,4,I wanna do it,73,74,75,74.5,1
+teacher,19,"You	can	do	it.	You	wanna	do	what? Here’s	our	experiment.	So	this	is	what	I	want	you	to	do.",78,74,81,77.5,7
+student1,23,"Ms.	Guevara,	cuando- if	you	wiggle,	como	una	coca-cola	en	un	bottle	y	cuando	lo	abres	it	goes	up.	Y	se	cae.",84,80,88,84,8
+teacher,4,"En	una	Coca-Cola?",90,89,91,90,2
+student1,17,"No,	cuando	esta	como	una	botella. Y,	y	 cuando,	como, abres, se	va	por	aquí,	se	cae",94,91,98,94.5,7
+teacher,8,"Se	sube.	Que	tiene	una	Coca-Cola?	Tiene?",99,97,100,98.5,3
+student1,2,Una tapadera.,101,100,102,101,2
+teacher,24,"Y tiene	gas.		Es	agua	con	gas.	Entonces	si le	haces	así a	la	Coca-Cola.	Zb-zb-zb-zb-zb ZIP! Que	sube?	El	gas	sube.	",106,102,112,107,10
+student1,9,"Y	se	te	cae	también va	explotar	así- [explosion	sound	with	his	mouth.]	",114,113,117,115,4
+student1,2,"Los	bubbles",116,112,114,113,2
+student1,4,"Y	también las	bubbles.",115,115,117,116,2
+teacher,11,"Las	burbujas.	Okay,	this	is	what	I	want	you	to	do.",118,116,120,118,4
